@@ -1,22 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-
+import CountDown from './CountDown';
 function App() {
+  let onTimesup = () => {
+    alert(`Time's up!`)
+  }
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          --- A COUNTDOWN TIMMER WITH REACT ---
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <CountDown
+            onTimesup={onTimesup}
+            duration={60}
+          />
+        </div>
       </header>
     </div>
   );
